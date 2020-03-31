@@ -1,3 +1,3 @@
 <!-- Logged in View -->
-<p *ngIf="userLoggedIn">Logged in as: </p>
+<p *ngIf="userLoggedIn">Logged in as: {{ authService.decodedToken?.unique_name | titlecase }}</p>
 <button (click)="logout()">Logout</button>

@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { AuthService } from '../_services/auth.service';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -8,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class KnightOwlAppComponent implements OnInit {
   @Input() userLoggedIn: boolean;
-  constructor() { }
+  constructor(public authService: AuthService) { }
 
   ngOnInit() {
   }
