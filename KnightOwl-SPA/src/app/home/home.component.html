@@ -1,0 +1,5 @@
+<!-- Login Page -->
+<app-login *ngIf="!loggedIn()"></app-login>
+
+<!--Knight Owl App-->
+<app-KnightOwlApp *ngIf="loggedIn()" [userLoggedIn]="loggedIn"></app-KnightOwlApp>

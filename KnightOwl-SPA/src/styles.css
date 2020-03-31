@@ -1,2 +1,68 @@
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../node_modules/font-awesome/css/font-awesome.min.css';
+
+html, body, .container-fluid, #container {
+    height: 100%;
+}
+
+body {
+    font-family: 'Fira Sans', sans-serif;
+    font-weight: bold;
+    letter-spacing: 0.075em;
+    font-size: 14px;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.btn {
+    width: 100%;
+    background: #41c862;
+    text-align: center;
+    border: none;
+    border-radius: 0;
+    color: #2d353d;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 8px 0;
+}
+
+.ko-btn {
+    height: 33px;
+    text-align: center;
+    border: 0;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    color:#11471e;
+}
+
+.ko-btn:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #11471e;
+}
+
+.ko-input, .ko-input:focus {
+    background: #00cf9b;
+    border-radius: 0px;
+    width: 100%;
+    padding-left: 10px;
+    outline: none;
+    letter-spacing: 1px;
+    border: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.ko-input:focus {
+    outline: none;
+}
+
+.ko-input::placeholder {
+    color: #fff;
+}

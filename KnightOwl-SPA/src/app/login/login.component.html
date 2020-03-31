@@ -1,0 +1,11 @@
+<div class="login-container text-center">
+  <form #loginForm="ngForm" class="form-signin" (ngSubmit)="login()">
+    <img class="mb-2" src="assets/login/login-logo.png">
+    <p class="mt-2 mb-3 text-muted">Intelligent Zoo Management Software</p>
+    <label for="inputEmail" class="sr-only">Username</label>
+    <input type="text" id="inputEmail" class="form-control ko-input mb-2" name="username" placeholder="Username" required [(ngModel)]="model.username">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control ko-input mb-2" name="password" placeholder="Password" required [(ngModel)]="model.password">
+    <button class="btn btn-lg btn-primary btn-block ko-btn" [disabled]="!loginForm.valid" type="submit">Login</button>
+  </form>
+</div>
