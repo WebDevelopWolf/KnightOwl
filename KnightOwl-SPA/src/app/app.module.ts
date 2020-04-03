@@ -10,19 +10,23 @@ import { RouterModule } from '@angular/router';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 // Services
 import { AuthService } from './_services/auth.service';
+import { ModuleService } from './_services/module.service';
 // Components
 import { appRoutes } from './routes';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { SubnavComponent } from './subnav/subnav.component';
+
 
 @NgModule({
    declarations: [
       AppComponent,
       NavComponent,
       LoginComponent,
-      DashboardComponent
+      DashboardComponent,
+      SubnavComponent
    ],
    imports: [
       BrowserModule,
@@ -34,7 +38,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
    ],
    providers: [
       AuthService,
-      ErrorInterceptorProvider
+      ErrorInterceptorProvider,
+      ModuleService
    ],
    bootstrap: [
       AppComponent

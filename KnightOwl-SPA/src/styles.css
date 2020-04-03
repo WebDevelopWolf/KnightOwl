@@ -5,6 +5,11 @@ html, body, .container-fluid, #container {
     height: 100%;
 }
 
+#container {
+    margin-left: 0;
+    margin-right: 0;
+}
+
 body {
     font-family: 'Fira Sans', sans-serif;
     font-weight: bold;

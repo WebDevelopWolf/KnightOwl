@@ -1,2 +1,15 @@
-<app-nav *ngIf="loggedIn()"></app-nav>
-<router-outlet></router-outlet>
+<div class="container-fluid">
+    <div id="container" class="row">
+
+        <!-- Navigation Module -->
+        <app-nav *ngIf="loggedIn()"></app-nav>
+
+        <!-- Sub Navigation -->
+        <app-subnav *ngIf="loggedIn()"></app-subnav>
+
+        <!-- Modules -->
+        <div id="module" class="col">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

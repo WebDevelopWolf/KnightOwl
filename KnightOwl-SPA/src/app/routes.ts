@@ -10,7 +10,7 @@ export const appRoutes: Routes = [
         runGuardsAndResolvers: 'always',
         canActivate: [AuthGuard],
         children: [
-            {path: 'dashboard', component: DashboardComponent}
+            {path: 'dash', component: DashboardComponent}
         ]
     },
     {path: 'login', component: LoginComponent},

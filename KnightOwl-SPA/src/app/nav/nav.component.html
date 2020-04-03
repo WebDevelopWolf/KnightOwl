@@ -1,3 +1,7 @@
-<p>
-  nav works!
-</p>
+<div id="nav">
+  <nav>
+    <a *ngFor="let module of modules" [routerLink]=module.routerLink routerLinkActive="active">
+      <i [ngClass]=module.faIcon></i>
+    </a>
+  </nav>
+</div>

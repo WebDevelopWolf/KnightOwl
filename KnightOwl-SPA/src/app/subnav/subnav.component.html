@@ -1,0 +1,13 @@
+<div id="sub-nav">
+  <h1>{{module?.moduleTitle}}</h1>
+  <p>{{module?.description}}</p>
+  <p>{{module?.instruction}}</p>
+  <ul>
+    <a *ngFor="let link of module?.subModules" [routerLink]=link.routerLink><li>{{link.moduleLinkTitle}}</li></a>
+  </ul>
+  <div class="user">
+    <img src="../assets/users/liane.png" />
+    <p>Twit-Twoo Liane!</p>
+    <p>Zoo-Keeper</p>
+  </div> 
+</div>

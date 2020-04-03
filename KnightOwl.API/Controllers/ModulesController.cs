@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using KnightOwl.API.Data;
@@ -27,7 +28,8 @@ namespace KnightOwl.API.Controllers
         public async Task<IActionResult> GetModules()
         {
             var modules = await _repo.GetModules();
-            var modulesToRetun = _mapper.Map<IEnumerable<ModulesForNavDto>>(modules);
+            var enabledModules = modules.Where(m => m.Enabled == true).OrderBy(m => m.ViewOrder);
+            var modulesToRetun = _mapper.Map<IEnumerable<ModulesForNavDto>>(enabledModules);
             return Ok(modulesToRetun);
         }
 
