@@ -4,12 +4,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Module } from '../_models/module';
 
-const httpOptions = {
-  headers: new HttpHeaders({
-    Authorization: 'Bearer ' + localStorage.getItem('token')
-  })
-};
-
 @Injectable({
   providedIn: 'root'
 })
@@ -21,12 +15,12 @@ constructor(private http: HttpClient) { }
 
 // Get list of modules
 getModules(): Observable<Module[]> {
-  return this.http.get<Module[]>(this.baseUrl, httpOptions);
+  return this.http.get<Module[]>(this.baseUrl);
 }
 
 // Get a single module
 getModule(id): Observable<Module> {
-  return this.http.get<Module>(this.baseUrl + id, httpOptions);
+  return this.http.get<Module>(this.baseUrl + id);
 }
 
 }

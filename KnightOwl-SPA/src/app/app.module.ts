@@ -6,6 +6,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastNotificationsModule } from 'ngx-toast-notifications';
 import { RouterModule } from '@angular/router';
+import { JwtModule } from '@auth0/angular-jwt';
 // Providers
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 // Services
@@ -18,6 +19,10 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SubnavComponent } from './subnav/subnav.component';
+
+export function tokenGetter() {
+   return localStorage.getItem('token');
+}
 
 
 @NgModule({
@@ -34,7 +39,15 @@ import { SubnavComponent } from './subnav/subnav.component';
       HttpClientModule,
       FormsModule,
       ToastNotificationsModule,
-      RouterModule.forRoot(appRoutes)
+      RouterModule.forRoot(appRoutes),
+      JwtModule.forRoot({
+         config: {
+            // tslint:disable-next-line: object-literal-shorthand
+            tokenGetter: tokenGetter,
+            whitelistedDomains: ['localhost:5000'],
+            blacklistedRoutes: ['localhost:5000/api/auth']
+         }
+      })
    ],
    providers: [
       AuthService,

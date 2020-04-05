@@ -1,0 +1,83 @@
+<div id="animal-list">
+  <div class="tabs">
+    <input type="radio" id="tab1" name="tab-control" checked>
+    <input type="radio" id="tab2" name="tab-control">
+    <input type="radio" id="tab3" name="tab-control">  
+    <input type="radio" id="tab4" name="tab-control">
+    <ul>
+      <li title="Fur"><label for="tab1" role="button"><span><i class="fad fa-monkey"></i> Fur</span></label></li>
+      <li title="Feathers"><label for="tab2" role="button"><span><i class="fad fa-crow"></i> Feathers</span></label></li>
+      <li title="Scales"><label for="tab3" role="button"><i class="fad fa-snake"></i> <span>Scales</span></label></li>    
+      <li title="Other"><label for="tab4" role="button"><i class="fad fa-spider-black-widow"></i> <span>Other</span></label></li>
+    </ul>
+    
+    <div class="slider"><div class="indicator"></div></div>
+    <div class="content">
+    
+    <!--Fur Tab-->
+      <section>
+        <div class="toolbar">
+          <input id="fur-filter" class="filter" placeholder="Search 'Fur' Animals" />
+          <button id="AddNewAnimal" class="btn ko-btn btn-left float-right"><i class="fad fa-plus"></i> Add Animal</button>
+          <button id="InspectionReport" class="btn ko-btn btn-right float-right"><i class="fad fa-print-search"></i> Start Inspection Report</button>
+        </div>
+        <!--Fur Animal List-->
+        <div class="list-container">
+          <div class="animal-row">
+            <img src="assets/animals/list/alfie.png" />
+            <div class="animal-info">
+              <p class="animal-name"><i class="fad fa-monkey"></i> Alfie (Alfie-moon)</p>
+              <div class="row">
+                <div id="species" class="col">
+                  <p id="species-text"><i class="fad fa-paw-claws"></i> <span>Skunk</span></p>
+                </div>
+                <div class="col">
+                  <p><i class="fad fa-paw"></i> <span>American</span></p>
+                </div>
+                <div class="col">
+                  <p><i class="fad fa-home-heart"></i> <span>01.01.01</span></p>
+                </div>
+                <div class="col">
+                  <p><i class="fad fa-watch-fitness"></i> <span>3 Years</span></p>
+                </div>
+                <div class="col">
+                  <p><i class="fad fa-hotel"></i> <span>1-A</span></p>
+                </div>
+                <div class="col">
+                  <p><i class="fad fa-smile"></i> <span>Good</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--Feather Tab-->
+      <section>
+        <div class="toolbar">
+          <input id="fur-filter" class="filter" placeholder="Search 'Feather' Animals" />
+          <button id="AddNewAnimal" class="btn ko-btn btn-left float-right"><i class="fad fa-plus"></i> Add Animal</button>
+          <button id="InspectionReport" class="btn ko-btn btn-right float-right"><i class="fad fa-print-search"></i> Start Inspection Report</button>
+        </div>
+      </section>
+
+      <!--Scales Tab-->
+      <section>
+        <div class="toolbar">
+          <input id="fur-filter" class="filter" placeholder="Search 'Scale' Animals" />
+          <button id="AddNewAnimal" class="btn ko-btn btn-left float-right"><i class="fad fa-plus"></i> Add Animal</button>
+          <button id="InspectionReport" class="btn ko-btn btn-right float-right"><i class="fad fa-print-search"></i> Start Inspection Report</button>
+        </div>
+      </section>
+
+      <!--Other Tab-->
+      <section>
+        <div class="toolbar">
+          <input id="fur-filter" class="filter" placeholder="Search 'Other' Animals" />
+          <button id="AddNewAnimal" class="btn ko-btn btn-left float-right"><i class="fad fa-plus"></i> Add Animal</button>
+          <button id="InspectionReport" class="btn ko-btn btn-right float-right"><i class="fad fa-print-search"></i> Start Inspection Report</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>

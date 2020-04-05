@@ -17,12 +17,11 @@ body {
     font-size: 14px;
 }
 
-.container-fluid {
+.container-fluid, #module {
     padding: 0;
 }
 
 .btn {
-    width: 100%;
     background: #41c862;
     text-align: center;
     border: none;
@@ -30,11 +29,12 @@ body {
     color: #2d353d;
     font-size: 12px;
     font-weight: bold;
-    padding: 8px 0;
+    padding: 8px 12px;
 }
 
 .ko-btn {
     height: 33px;
+    background: #41c862;
     text-align: center;
     border: 0;
     font-family: 'Raleway', sans-serif;
@@ -46,6 +46,16 @@ body {
     cursor: pointer;
     color: #FFFFFF;
     background: #11471e;
+}
+
+.ko-btn:hover {
+    cursor: pointer;
+    color: #FFFFFF;
+    background: #11471e;
+}
+
+.ko-btn i {
+    margin-right: 0.5rem;
 }
 
 .ko-input, .ko-input:focus {
@@ -69,5 +79,5 @@ body {
 }
 
 .ko-input::placeholder {
-    color: #fff;
+    color: #FFF;
 }
