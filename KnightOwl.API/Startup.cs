@@ -43,6 +43,7 @@ namespace KnightOwl.API
             services.AddAutoMapper(typeof (ModuleRepository).Assembly);
             services.AddScoped<IAuthRepository, AuthRepository>();
             services.AddScoped<IModuleRepository, ModuleRepository>();
+            services.AddScoped<IAnimalRepository, AnimalRepository>();
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => {
                 options.TokenValidationParameters = new TokenValidationParameters {
                     ValidateIssuerSigningKey = true,

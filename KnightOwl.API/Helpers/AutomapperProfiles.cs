@@ -11,6 +11,9 @@ namespace KnightOwl.API.Helpers
             CreateMap<Module, ModulesForNavDto>();
             CreateMap<Module, ModulesForSubNavDto>();
             CreateMap<ModuleLink, ModuleLinksForNavDto>();
+            CreateMap<Animal, AnimalForListDto>()
+                .ForMember(dest => dest.Classification, opt => opt.MapFrom(src => src.Classification.Name.ToString()))
+                .ForMember(dest => dest.Age, opt => opt.MapFrom(src => src.DateOfBirth.CalculateAge()));
         }
     }
 }

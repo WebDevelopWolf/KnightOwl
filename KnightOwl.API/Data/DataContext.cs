@@ -11,5 +11,7 @@ namespace KnightOwl.API.Data
         public DbSet<User> Users { get; set; }
         public DbSet<Module> Modules { get; set; }
         public DbSet<ModuleLink> ModuleLinks { get; set; }
+        public DbSet<Animal> Animals { get; set; }
+        public DbSet<AnimalCategory> AnimalCategories { get; set; }
     }
 }
