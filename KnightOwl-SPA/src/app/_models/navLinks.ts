@@ -1,6 +1,6 @@
 import { ModuleLink } from './moduleLink';
 
-export interface Module {
+export interface NavLinks {
     moduleId: number;
     moduleTitle: string;
     routerLink: string;

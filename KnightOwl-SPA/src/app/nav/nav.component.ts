@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Module } from '../_models/module';
-import { ModuleService } from '../_services/module.service';
+import { NavLinks } from '../_models/navLinks';
+import { NavService } from '../_services/nav.service';
 import { AlertifyService } from '../_services/alertify.service';
 
 @Component({
@@ -9,16 +9,16 @@ import { AlertifyService } from '../_services/alertify.service';
   styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit {
-  modules: Module[];
+  modules: NavLinks[];
 
-  constructor(private moduleService: ModuleService, private alertify: AlertifyService) { }
+  constructor(private moduleService: NavService, private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.loadModules();
   }
 
   loadModules() {
-    this.moduleService.getModules().subscribe((modules: Module[]) => {
+    this.moduleService.getModules().subscribe((modules: NavLinks[]) => {
       this.modules = modules;
     }, error => {
       this.alertify.error(error, 'Failed to Load Modules...');

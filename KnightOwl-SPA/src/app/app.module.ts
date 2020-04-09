@@ -11,7 +11,8 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { ErrorInterceptorProvider } from './_services/error.interceptor';
 // Services
 import { AuthService } from './_services/auth.service';
-import { ModuleService } from './_services/module.service';
+import { NavService } from './_services/nav.service';
+import { AnimalService } from './_services/animal.service';
 // Components
 import { appRoutes } from './routes';
 import { AppComponent } from './app.component';
@@ -19,6 +20,8 @@ import { NavComponent } from './nav/nav.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { SubnavComponent } from './subnav/subnav.component';
+import { CommonModule } from '@angular/common';
+import { AnimalsComponent } from './animals/animals/animals.component';
 
 export function tokenGetter() {
    return localStorage.getItem('token');
@@ -31,10 +34,12 @@ export function tokenGetter() {
       NavComponent,
       LoginComponent,
       DashboardComponent,
-      SubnavComponent
+      SubnavComponent,
+      AnimalsComponent
    ],
    imports: [
       BrowserModule,
+      CommonModule,
       BrowserAnimationsModule,
       HttpClientModule,
       FormsModule,
@@ -52,7 +57,8 @@ export function tokenGetter() {
    providers: [
       AuthService,
       ErrorInterceptorProvider,
-      ModuleService
+      NavService,
+      AnimalService
    ],
    bootstrap: [
       AppComponent

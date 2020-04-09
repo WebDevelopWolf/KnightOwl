@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationEnd } from '@angular/router';
-import { ModuleService } from '../_services/module.service';
+import { NavService } from '../_services/nav.service';
 import { AlertifyService } from '../_services/alertify.service';
-import { Module } from '../_models/module';
+import { NavLinks } from '../_models/navLinks';
 
 @Component({
   selector: 'app-subnav',
@@ -11,11 +11,11 @@ import { Module } from '../_models/module';
 })
 export class SubnavComponent implements OnInit {
   routeString: string;
-  modules: Module[];
+  modules: NavLinks[];
   moduleId: number;
-  module: Module;
+  module: NavLinks;
 
-  constructor(private router: Router, private moduleService: ModuleService, private alertify: AlertifyService) { }
+  constructor(private router: Router, private moduleService: NavService, private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.getSubNav();
@@ -43,7 +43,7 @@ export class SubnavComponent implements OnInit {
   }
 
   getModule(id: number) {
-    this.moduleService.getModule(id).subscribe((module: Module) => {
+    this.moduleService.getModule(id).subscribe((module: NavLinks) => {
       this.module = module;
     }, error => {
       this.alertify.error(error, 'Failed to Load This Module...');
@@ -51,7 +51,7 @@ export class SubnavComponent implements OnInit {
   }
 
   getModules() {
-    this.moduleService.getModules().subscribe((modules: Module[]) => {
+    this.moduleService.getModules().subscribe((modules: NavLinks[]) => {
       this.modules = modules;
     }, error => {
       this.alertify.error(error, 'Failed to Load Modules...');

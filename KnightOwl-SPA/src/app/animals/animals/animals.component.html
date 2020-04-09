@@ -23,39 +23,42 @@
         </div>
         <!--Fur Animal List-->
         <div class="list-container">
-          <div class="animal-row">
-            <img src="assets/animals/list/alfie.png" />
-            <div class="animal-info">
-              <p class="animal-name"><i class="fad fa-monkey"></i> Alfie (Alfie-moon)</p>
-              <div class="row">
-                <div id="species" class="col">
-                  <p id="species-text"><i class="fad fa-paw-claws"></i> <span>Skunk</span></p>
-                </div>
-                <div class="col">
-                  <p><i class="fad fa-paw"></i> <span>American</span></p>
-                </div>
-                <div class="col">
-                  <p><i class="fad fa-home-heart"></i> <span>01.01.01</span></p>
-                </div>
-                <div class="col">
-                  <p><i class="fad fa-watch-fitness"></i> <span>3 Years</span></p>
-                </div>
-                <div class="col">
-                  <p><i class="fad fa-hotel"></i> <span>1-A</span></p>
-                </div>
-                <div class="col">
-                  <p><i class="fad fa-smile"></i> <span>Good</span></p>
+          <h2 *ngIf="!animalsFur" class="text-center mt-3">No animals found. Add more to your manajore using the 'Add Animal' button above.</h2>
+          <ng-template ngIf="animalsFur">
+            <div *ngFor="let animalFur of animalsFur" class="animal-row">
+              <img src="{{'/assets/animals/list/' + (animalFur.name | lowercase) + '.png'}}" alt="{{ animalFur.name }}" />
+              <div class="animal-info">
+                <p class="animal-name"><i class="fad fa-monkey"></i> {{ animalFur.name }} ({{ animalFur.nickname }})</p>
+                <div class="row">
+                  <div id="species" class="col">
+                    <p id="species-text"><i class="fad fa-paw-claws"></i> <span>{{ animalFur.speciesName }}</span></p>
+                  </div>
+                  <div class="col">
+                    <p><i class="fad fa-paw"></i> <span>{{ animalFur.subSpeciesName }}</span></p>
+                  </div>
+                  <div class="col">
+                    <p><i class="fad fa-home-heart"></i> <span>{{ animalFur.adoptionDate | date: 'dd MMM yyyy' }}</span></p>
+                  </div>
+                  <div class="col">
+                    <p><i class="fad fa-watch-fitness"></i> <span>{{ animalFur.age }} Years</span></p>
+                  </div>
+                  <div class="col">
+                    <p><i class="fad fa-hotel"></i> <span>{{ animalFur.enclosureName }}</span></p>
+                  </div>
+                  <div class="col">
+                    <p><i class="fad fa-smile"></i> <span>{{ animalFur.temperament }}</span></p>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </ng-template>
         </div>
       </section>
 
       <!--Feather Tab-->
       <section>
         <div class="toolbar">
-          <input id="fur-filter" class="filter" placeholder="Search 'Feather' Animals" />
+          <input id="feather-filter" class="filter" placeholder="Search 'Feather' Animals" />
           <button id="AddNewAnimal" class="btn ko-btn btn-left float-right"><i class="fad fa-plus"></i> Add Animal</button>
           <button id="InspectionReport" class="btn ko-btn btn-right float-right"><i class="fad fa-print-search"></i> Start Inspection Report</button>
         </div>
@@ -64,7 +67,7 @@
       <!--Scales Tab-->
       <section>
         <div class="toolbar">
-          <input id="fur-filter" class="filter" placeholder="Search 'Scale' Animals" />
+          <input id="scales-filter" class="filter" placeholder="Search 'Scale' Animals" />
           <button id="AddNewAnimal" class="btn ko-btn btn-left float-right"><i class="fad fa-plus"></i> Add Animal</button>
           <button id="InspectionReport" class="btn ko-btn btn-right float-right"><i class="fad fa-print-search"></i> Start Inspection Report</button>
         </div>
@@ -73,7 +76,7 @@
       <!--Other Tab-->
       <section>
         <div class="toolbar">
-          <input id="fur-filter" class="filter" placeholder="Search 'Other' Animals" />
+          <input id="other-filter" class="filter" placeholder="Search 'Other' Animals" />
           <button id="AddNewAnimal" class="btn ko-btn btn-left float-right"><i class="fad fa-plus"></i> Add Animal</button>
           <button id="InspectionReport" class="btn ko-btn btn-right float-right"><i class="fad fa-print-search"></i> Start Inspection Report</button>
         </div>

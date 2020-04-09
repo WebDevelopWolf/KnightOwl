@@ -2,25 +2,25 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Module } from '../_models/module';
+import { NavLinks } from '../_models/navLinks';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ModuleService {
+export class NavService {
   baseUrl = environment.apiUrl + 'modules/';
-  enabledModules: Module[];
+  enabledModules: NavLinks[];
 
 constructor(private http: HttpClient) { }
 
 // Get list of modules
-getModules(): Observable<Module[]> {
-  return this.http.get<Module[]>(this.baseUrl);
+getModules(): Observable<NavLinks[]> {
+  return this.http.get<NavLinks[]>(this.baseUrl);
 }
 
 // Get a single module
-getModule(id): Observable<Module> {
-  return this.http.get<Module>(this.baseUrl + id);
+getModule(id): Observable<NavLinks> {
+  return this.http.get<NavLinks>(this.baseUrl + id);
 }
 
 }
